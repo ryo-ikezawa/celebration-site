@@ -1,0 +1,31 @@
+#slot-machine {
+    width: 300px;
+    height: 300px;
+    border: 1px solid black;
+    position: relative;
+  }
+  
+  .reel {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    position: absolute;
+  }
+  
+  #reel1 {
+    left: 0;
+  }
+  
+  #reel2 {
+    left: 100px;
+  }
+  
+  #reel3 {
+    left: 200px;
+  }
+  
+  #spin-button {
+    display: block;
+    margin: 10px auto;
+  }
+  

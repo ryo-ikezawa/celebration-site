@@ -1,0 +1,48 @@
+body {
+  background: #010353;
+  font-family: sans-serif;
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 1.6;
+  color: #ff53c3;
+}
+
+.counter {
+  display: flex;
+  width: fit-content;
+  margin: 50px auto;
+}
+
+.counter > div {
+  margin: 0 8px;
+  width: fit-content;
+  height: 76px;
+  display: flex;
+  overflow-y: hidden; /* 各リールに数字は縦に長く並ぶが、表示は1文字のみ */
+}
+
+.fix-number,
+.change-number {
+  width: 52px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column; /* スロットのリールに数字を縦に並べる */
+  /* アニメーションは1回、弾むように始まり弾むように終わり、最後の状態をキープ */
+  /* animation: displayAnim 3s cubic-bezier(0.55, -0.17, 0.74, 1.29) forwards; */
+  animation: displayAnim 4s linear forwards infinite;
+}
+
+/*
+ * リールをY方向に移動するアニメーション
+ * アニメーション最後の位置は、最後の数字の高さ分下げる
+ * font-size: 50px; line-height: 1.6; より、50px × 1.6 = 80px と算出
+ */
+@keyframes displayAnim {
+  0% { transform: translateY(0%); }
+  100% { transform: translateY(calc(-100% + 80px)); }
+}
+
+span {
+  display: inline-block;
+  text-align: center;
+}
